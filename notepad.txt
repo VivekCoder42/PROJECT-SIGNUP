@@ -1,0 +1,76 @@
+   <ul className="navbar-nav ms-auto">
+            {
+              status ? (
+
+                <li className="nav-item dropdown">
+                  <button
+                    className="btn btn-danger dropdown-toggle"      /* red button, like old one */
+                    id="userMenu"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Account
+                  </button>
+
+                  <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+                    <li>
+                      <button className="dropdown-item" onClick={goToBlog}>
+                        ➕ Add Blog
+                      </button>
+                    </li>
+                    <li>
+                      <button className="dropdown-item"  onClick={goToBlogList}>
+                        📚 Blog List
+                      </button>
+                    </li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li>
+                      <button className="dropdown-item text-danger" onClick={logout}>
+                        🔓 Logout
+                      </button>
+                    </li>
+                  </ul>
+                </li>
+
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link
+                      className="btn"
+                      style={{
+                        backgroundColor: "#0d47a1",
+                        color: "#fff",
+                        marginRight: "10px",
+                        fontWeight: "500"
+                      }}
+                      to="/login"
+                    >
+                      <i className="bi bi-box-arrow-in-right me-1"></i> Login
+                    </Link>
+                  </li>
+
+                  <li className="nav-item">
+                    <Link
+                      className="btn"
+                      style={{
+                        backgroundColor: "#ff6f00", // vibrant orange
+                        color: "#fff",
+                        fontWeight: "600",
+                        boxShadow: "0 4px 12px rgba(255, 111, 0, 0.4)",
+                        borderRadius: "6px",
+                        padding: "6px 16px",
+                        transition: "all 0.3s ease"
+                      }}
+                      to="/register"
+                    >
+                      <i className="bi bi-person-plus-fill me-1"></i> Register
+                    </Link>
+                  </li>
+
+
+                </>
+              )
+            }
+
+
+          </ul>
